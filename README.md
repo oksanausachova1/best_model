@@ -2,24 +2,39 @@
 This code seems to implement a function named best_model that performs a hyperparameter search and model selection process for a given set of models and their parameters. The function is capable of working on both regression and classification problems.
 
 For regression problems, the function tries to optimize the performance of the following models by hyperparameter search:
-Linear Regression
+
 Random Forest Regressor
+
 Decision Tree Regressor
+
 Lasso
+
 Ridge
+
 K Neighbors Regressor
+
 Gradient Boosting Regressor
+
 Ada Boost Regressor
+
 XGB Regressor
+
 The function trains each model with the best set of hyperparameters and calculates R-squared, root mean squared error (RMSE), and mean absolute error (MAE) metrics on the training and validation sets. Finally, the function generates a plot for each metric for comparison among models.
 
 For classification problems, the function tries to optimize the performance of the following models by hyperparameter search:
+
 Decision Tree Classifier
+
 Random Forest Classifier
+
 K Neighbors Classifier
+
 Gradient Boosting Classifier
+
 Ada Boost Classifier
+
 XGB Classifier
+
 The function trains each model with the best set of hyperparameters and calculates accuracy, F1 score, precision, recall, and ROC AUC metrics on the training and validation sets. Finally, the function generates a plot for each metric for comparison among models.
 
 The function takes the following arguments:

@@ -40,8 +40,8 @@ models: a list of tuples containing models to be included in the analysis, along
 
 The function returns a dictionary containing the model names as keys and their respective hyperparameters, trained models, and metrics as values.
 These functions generate pair plots of the given dataframe df:
- - for regression problems -  generates a grid of scatterplots in the upper triangle and kernel density estimates in the lower triangle. The scatterplots in the upper triangle show the relationship between each pair of variables, while the kernel density estimates in the lower triangle show the distribution of each variable.
+ - for regression problems -  generates a grid of scatterplots in the upper triangle and kernel density estimates in the lower triangle. The scatterplots in the upper triangle show the relationship between each pair of variables, while the kernel density estimates in the lower triangle show the distribution of each variable, histograms of each variable on the diagonal of the PairGrid.
 
-= for classification problems - generates a grid of scatterplots in the upper triangle and annotations of correlation coefficients in the lower triangle. The scatterplots in the upper triangle show the relationship between each pair of variables, while the annotations of correlation coefficients in the lower triangle show the strength and direction of the correlation between each pair of variables.
+ - for classification problems - generates a grid of scatterplots in the upper triangle and annotations of correlation coefficients in the lower triangle. The scatterplots in the upper triangle show the relationship between each pair of variables, while the annotations of correlation coefficients in the lower triangle show the strength and direction of the correlation between each pair of variables, histograms of each variable on the diagonal of the PairGrid.
 
-In both functions, the hue parameter is used to color-code the scatterplots and annotations based on the values of a categorical variable. The sns.regplot function is used to plot a linear regression line in the scatterplots, and the sns.kdeplot function is used to plot the kernel density estimates.
+The hue parameter is used to color-code the plots based on a categorical variable, making it easier to see how different subgroups of the data are related.

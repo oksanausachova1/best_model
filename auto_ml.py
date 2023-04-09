@@ -578,35 +578,13 @@ def best_model(features, target, mode, grid, df, hue, models):
 
 
 
-uploaded = files.upload()
-
-df = pd.read_csv(io.BytesIO(uploaded['data1.csv']))
-df.head(10)
+u
 
 
 
 
 
-df['Churn1']=df['Churn'].map({'Yes':1, 'No':0})
-#df['TotalCharges'] = df['TotalCharges'].str.replace(' ', '').astype(float)
-df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
-df['TotalCharges'].fillna(0, inplace = True)
-df['TotalCharges'].isna().sum()
-#df.dropna(inplace = True)
-df.isna().sum()
-
-x = df [['MonthlyCharges','tenure','TotalCharges' ]].values
-y = df['Churn1'].values
-y.reshape(-1)
 
 
-#model_grid, df_grid,pairs = grid_class(LogisticRegression(n_jobs = 1), {'C':[0.5,1.0, 2.0,3.0,10.0,20.0]},x, y)
-      
-#print(df_grid)
-      
-#plot_cv_metrics('model_name' + 'CV', df_grid['params'], df_grid['mean_test_f1'], df_grid['mean_test_recall'], df_grid['mean_test_precision'], df_grid['mean_test_accuracy'],pairs)
-res = best_model(x, y, 'classification' , 'Yes', df [['MonthlyCharges','tenure','TotalCharges', 'Churn1' ]], hue = 'Churn1', models = None)
 
-x = df [['MonthlyCharges','tenure' ]]
-y = df['TotalCharges']
-res = best_model(x, y, 'regression' , 'Yes', df = pd.concat([x, y], axis=1), hue = None, models = None)
+

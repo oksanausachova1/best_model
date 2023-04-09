@@ -35,7 +35,7 @@ Ada Boost Classifier
 
 XGB Classifier
 
-The function trains each model with the best set of hyperparameters and calculates accuracy, F1 score, precision, recall, and ROC AUC metrics on the training and validation sets. Finally, the function generates a plot for each metric for comparison among models.
+The function trains each model with the best set of hyperparameters and calculates accuracy, F1 score, precision, recall, and ROC AUC metrics on the training and validation sets. Finally, the function generates a plot for each metric for comparison among models.Also show a confusion matrix for models
 
 The function takes the following arguments:
 
@@ -55,8 +55,9 @@ models: a list of tuples containing models to be included in the analysis, along
 
 The function returns a dictionary containing the model names as keys and their respective hyperparameters, trained models, and metrics as values.
 These functions generate pair plots of the given dataframe df:
- - for regression problems -  generates a grid of scatterplots in the upper triangle and kernel density estimates in the lower triangle. The scatterplots in the upper triangle show the relationship between each pair of variables, while the kernel density estimates in the lower triangle show the distribution of each variable, histograms of each variable on the diagonal of the PairGrid.
 
- - for classification problems - generates a grid of scatterplots in the upper triangle and annotations of correlation coefficients in the lower triangle. The scatterplots in the upper triangle show the relationship between each pair of variables, while the annotations of correlation coefficients in the lower triangle show the strength and direction of the correlation between each pair of variables, histograms of each variable on the diagonal of the PairGrid.
+ - for regression problems -  generates a grid of regplot that creates a scatter plot with a regression line fit to the data  in the upper triangle and kernel density with annotations of correlation coefficients  estimates in the lower triangle. The scatterplots in the upper triangle show the relationship between each pair of variables, while the annotations of correlation coefficients in the lower triangle show the strength and direction of the correlation between each pair of variables, histograms of each variable on the diagonal of the PairGrid.
+
+ - for classification problems - generates a grid of regplot that creates a scatter plot with a regression line fit to the data  in the upper triangle and kernel density with annotations of correlation coefficients  estimates in the lower triangle. The scatterplots in the upper triangle show the relationship between each pair of variables, while the annotations of correlation coefficients in the lower triangle show the strength and direction of the correlation between each pair of variables, histograms of each variable on the diagonal of the PairGrid.
 
 The hue parameter is used to color-code the plots based on a categorical variable, making it easier to see how different subgroups of the data are related.

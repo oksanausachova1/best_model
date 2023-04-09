@@ -60,6 +60,19 @@ import matplotlib
 Functions for testing and evaluating regression models, as well as for plotting the performance metrics such as R-squared, MAE, and RMSE, using Matplotlib """
 
 def test_model_reg(model, model_name, x_train, y_train, x_test, y_test):
+    """
+    
+    Args:
+        model: 
+        model_name: 
+        x_train: 
+        y_train: 
+        x_test: 
+        y_test: 
+
+    Returns:
+
+    """"""
   # Train the model using the training data
   model.fit(x_train,y_train)
 
@@ -95,7 +108,6 @@ def test_model_reg(model, model_name, x_train, y_train, x_test, y_test):
   plt.show()
   plt.close()
   
-  # Return the scores dictionary
   return scores
 
 def plot_r2(model_names, model_scores_t, model_scores_v):
@@ -158,8 +170,8 @@ def test_model_class(model, model_name, x_train, y_train, x_test, y_test):
   f1_train = f1_score(y_train, y_train_pred) #, average='micro')
 
   # Calculate the precision of the model on the training and validation data
-  precision_test = precision_score (y_test, y_test_pred,zero_division=0) #, average='micro')
-  precision_train= precision_score (y_train, y_train_pred,zero_division=0) #, average='micro')
+  precision_test = precision_score (y_test, y_test_pred, zero_division=0) #, average='micro')
+  precision_train= precision_score (y_train, y_train_pred, zero_division=0) #, average='micro')
 
   # Calculate the recall of the model on the training and validation data
   recall_test = recall_score(y_test, y_test_pred )#, average='micro')
@@ -196,7 +208,7 @@ def test_model_class(model, model_name, x_train, y_train, x_test, y_test):
 
     # Add the average precision score and the precision-recall curve to the scores dictionary
     scores['AP'] = {'train':ap_train, 'val': ap_test}
-    scores['PR_curve'] = {'train':pr_curve_train, 'val': pr_curve_test}
+    scores['PR_curve'] = {'train': pr_curve_train, 'val': pr_curve_test}
   except AttributeError as e:
     # If the model does not have a predict_proba method, print an error message
     print(e)
@@ -358,7 +370,7 @@ def grid_reg(model, params, features, target):
 def plot_cv_r2(model_name, model_params, model_r2,pairs):
   #Plots the cross-validation R2 scores of a model across different hyperparameters
     fig, ax = plt.subplots()
-    fig.set_size_inches(30,10)
+    fig.set_size_inches(30, 10)
     plt.plot(model_params, model_r2, label = 'r2', color='blue')
     plt.xticks(rotation=90, ha='right')
     plt.title(model_name)

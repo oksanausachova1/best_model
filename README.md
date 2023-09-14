@@ -1,6 +1,6 @@
 # best_model
-This code implement a function named best_model that performs a hyperparameter search and model selection process for a given set of models and their parameters. The function is capable of working on both regression and classification problems.
-
+This modul performs a hyperparameter search and model selection process for a given set of models and their parameters. This function works for both regression and classification problems and helps you find the best model for your data.
+There examples of using this code.
 For regression problems, the function tries to optimize the performance of the following models by hyperparameter search:
 
 Random Forest Regressor
